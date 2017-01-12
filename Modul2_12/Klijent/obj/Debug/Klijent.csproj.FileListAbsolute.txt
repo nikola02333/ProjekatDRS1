@@ -1,0 +1,8 @@
+C:\Users\ftn\Desktop\ProjekatDES\ProjekatModul2\Klijent\bin\Debug\Klijent.exe.config
+C:\Users\ftn\Desktop\ProjekatDES\ProjekatModul2\Klijent\bin\Debug\Klijent.exe
+C:\Users\ftn\Desktop\ProjekatDES\ProjekatModul2\Klijent\bin\Debug\Klijent.pdb
+C:\Users\ftn\Desktop\ProjekatDES\ProjekatModul2\Klijent\bin\Debug\Biblioteka.dll
+C:\Users\ftn\Desktop\ProjekatDES\ProjekatModul2\Klijent\bin\Debug\Biblioteka.pdb
+C:\Users\ftn\Desktop\ProjekatDES\ProjekatModul2\Klijent\obj\Debug\Klijent.csprojResolveAssemblyReference.cache
+C:\Users\ftn\Desktop\ProjekatDES\ProjekatModul2\Klijent\obj\Debug\Klijent.exe
+C:\Users\ftn\Desktop\ProjekatDES\ProjekatModul2\Klijent\obj\Debug\Klijent.pdb
