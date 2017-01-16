@@ -19,36 +19,30 @@ namespace Client
 {
     public partial class PogledProjekata : Window 
     {
-		ChannelFactory<ICompanyDB> factory = new ChannelFactory<ICompanyDB>(
-		   new NetTcpBinding(),
-		   new EndpointAddress("net.tcp://localhost:4000/ICompanyDB"));
-        Projekat proj;
+        private ChannelFactory<ICompanyDB> factory = new ChannelFactory<ICompanyDB>( 
+            new NetTcpBinding(), 
+            new EndpointAddress("net.tcp://localhost:4000/ICompanyDB"));
+        private Projekat proj;
 
         public PogledProjekata()
         {
             InitializeComponent();
-			
         }
-		
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-		private void povezi(object sender, RoutedEventArgs e)
-		{
-          
+        private void Povezi(object sender, RoutedEventArgs e)
+        {
             if (listBoxProj.SelectedItem != null)
-			{
+            {
                 proj = (Projekat)listBoxProj.SelectedItem;
-
-
-
             }
-		} 
+        } 
 
-        private void spoj2(object sender, RoutedEventArgs e) // a ovde pravim instancu outsorsingKompanije i povezujem
+        private void Spoj2(object sender, RoutedEventArgs e) // a ovde pravim instancu outsorsingKompanije i povezujem
         {
             ICompanyDB proxy = factory.CreateChannel();
 

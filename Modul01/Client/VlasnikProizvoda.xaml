@@ -8,8 +8,8 @@
         Title="VlasnikProizvoda" Height="565.147" Width="444.538">
     <Grid  Margin="0,0,-8,-1">
         <Button x:Name="button" Content="Kreiranje projekta" HorizontalAlignment="Left" Margin="41,405,0,0" VerticalAlignment="Top" Width="109" Click="KreirajProjekat"/>
-        <Button x:Name="button1" Content="Prikaz aktivnih " HorizontalAlignment="Left" Margin="305,405,0,0" VerticalAlignment="Top" Width="91" Height="25"/>
-        <Button x:Name="button2" Content="Odjava" HorizontalAlignment="Left" Margin="186,474,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
+        <Button x:Name="button1" Content="Prikaz aktivnih " HorizontalAlignment="Left" Margin="305,405,0,0" VerticalAlignment="Top" Width="91" Height="25" Click="Prikaz_Aktivnih"/>
+        <Button x:Name="button2" Content="Odjava" HorizontalAlignment="Left" Margin="186,474,0,0" VerticalAlignment="Top" Width="75" Click="Odjava_zatvori"/>
         <TextBox x:Name="textBoxIme" HorizontalAlignment="Left" Height="23" Margin="57,21,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBoxOpis" HorizontalAlignment="Left" Height="62" Margin="57,59,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="235"/>
         <Label x:Name="label" Content="Ime:" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Height="23" Width="58"/>

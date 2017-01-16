@@ -13,12 +13,10 @@ namespace Server
         public AccessDB() : base("companyDB") { }
 
         public DbSet<Osoba> Actions { get; set; }
-     
-	   
-		public DbSet<KompanijaOUT> ActionsCompanyOut { get; set; }
+
+        public DbSet<KompanijaOUT> ActionsCompanyOut { get; set; }
 
         public DbSet<Projekat> ActionsProject { get; set; }
 
-		
     }
 }

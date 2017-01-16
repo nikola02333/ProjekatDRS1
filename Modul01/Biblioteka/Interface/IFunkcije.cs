@@ -12,8 +12,6 @@ namespace Biblioteka.Interface
     public interface IFunkcije
     {
         [OperationContract]
-        int SlanjeLoga(string username, string pass); //
-
-       
+        int SlanjeLoga(string username, string pass); 
     }
 }

@@ -21,3 +21,14 @@ G:\NIKOLA\novo3\projekat\Biblioteka\bin\Debug\EntityFramework.SqlServer.xml
 G:\NIKOLA\novo3\projekat\Biblioteka\bin\Debug\nunit.framework.xml
 G:\NIKOLA\novo3\projekat\Biblioteka\obj\Debug\Biblioteka.dll
 G:\NIKOLA\novo3\projekat\Biblioteka\obj\Debug\Biblioteka.pdb
+C:\Users\susanne\Desktop\Modul01\Modul01\Biblioteka\bin\Debug\Biblioteka.dll.config
+C:\Users\susanne\Desktop\Modul01\Modul01\Biblioteka\bin\Debug\Biblioteka.dll
+C:\Users\susanne\Desktop\Modul01\Modul01\Biblioteka\bin\Debug\Biblioteka.pdb
+C:\Users\susanne\Desktop\Modul01\Modul01\Biblioteka\bin\Debug\EntityFramework.dll
+C:\Users\susanne\Desktop\Modul01\Modul01\Biblioteka\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\susanne\Desktop\Modul01\Modul01\Biblioteka\bin\Debug\nunit.framework.dll
+C:\Users\susanne\Desktop\Modul01\Modul01\Biblioteka\bin\Debug\EntityFramework.xml
+C:\Users\susanne\Desktop\Modul01\Modul01\Biblioteka\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\susanne\Desktop\Modul01\Modul01\Biblioteka\bin\Debug\nunit.framework.xml
+C:\Users\susanne\Desktop\Modul01\Modul01\Biblioteka\obj\Debug\Biblioteka.dll
+C:\Users\susanne\Desktop\Modul01\Modul01\Biblioteka\obj\Debug\Biblioteka.pdb

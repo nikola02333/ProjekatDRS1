@@ -8,10 +8,10 @@
         Title="PogledProjekata i Outsorsing kompanija" Height="359.526" Width="527.099">
     <Grid Margin="0,0,2,0">
         <Label x:Name="labela" Margin="340,10,33,293" Content="Outsorsing Kompanije"/>
-        <Button Content="dugme1" Margin="72,231,240,59" Click="povezi" />
+        <Button Content="dugme1" Margin="72,231,240,59" Click="Povezi" />
         <ListBox x:Name="listBoxProj" HorizontalAlignment="Left" Height="135" Margin="10,49,0,0" VerticalAlignment="Top" Width="258" />
-        <Button x:Name="button" Content="Zatvori" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="246,298,0,0" Click="button_Click" RenderTransformOrigin="2.573,1.5"/>
+        <Button x:Name="button" Content="Zatvori" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="246,298,0,0" Click="Button_Click" RenderTransformOrigin="2.573,1.5"/>
         <ListBox  Name="ListBoxOutsorsing" HorizontalAlignment="Left" Height="151" Margin="340,49,0,0" VerticalAlignment="Top" Width="155"/>
-        <Button Content="dugme2" Name="drugo" Margin="340,231,60,59" Click="spoj2"/>
+        <Button Content="dugme2" Name="drugo" Margin="340,231,60,59" Click="Spoj2"/>
     </Grid>
 </Window>

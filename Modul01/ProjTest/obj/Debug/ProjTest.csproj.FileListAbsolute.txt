@@ -1,0 +1,9 @@
+C:\Users\susanne\Desktop\Modul01\Modul01\ProjTest\bin\Debug\ProjTest.dll
+C:\Users\susanne\Desktop\Modul01\Modul01\ProjTest\bin\Debug\ProjTest.pdb
+C:\Users\susanne\Desktop\Modul01\Modul01\ProjTest\bin\Debug\Biblioteka.dll
+C:\Users\susanne\Desktop\Modul01\Modul01\ProjTest\bin\Debug\nunit.framework.dll
+C:\Users\susanne\Desktop\Modul01\Modul01\ProjTest\bin\Debug\Biblioteka.pdb
+C:\Users\susanne\Desktop\Modul01\Modul01\ProjTest\bin\Debug\nunit.framework.xml
+C:\Users\susanne\Desktop\Modul01\Modul01\ProjTest\obj\Debug\ProjTest.csprojResolveAssemblyReference.cache
+C:\Users\susanne\Desktop\Modul01\Modul01\ProjTest\obj\Debug\ProjTest.dll
+C:\Users\susanne\Desktop\Modul01\Modul01\ProjTest\obj\Debug\ProjTest.pdb

@@ -26,22 +26,16 @@ namespace Client
     /// </summary>
     public partial class Direktor : Window
     {
-        Osoba z;
-        Osoba prijavljeni;
-        DateTime vremeDolaskaNaPosao;
-        Thread zahtevPartnerstvo;
-        List<string> kompanije;
-        string hiring;
-        //Kompanija outsourcing;
-        Dictionary<string, Projekat> projekat;
-
-        ChannelFactory<ICompanyDB> factory = new ChannelFactory<ICompanyDB>(
+        private Osoba z;
+        private Osoba prijavljeni;
+        private DateTime vremeDolaskaNaPosao;
+        
+     
+        private ChannelFactory<ICompanyDB> factory = new ChannelFactory<ICompanyDB>(
             new NetTcpBinding(),
             new EndpointAddress("net.tcp://localhost:4000/ICompanyDB"));
 
-		
-
-        ChannelFactory<IFunkcije> factory1 = new ChannelFactory<IFunkcije>(
+        private ChannelFactory<IFunkcije> factory1 = new ChannelFactory<IFunkcije>(
             new NetTcpBinding(),
             new EndpointAddress("net.tcp://localhost:4000/IFunkcije"));
 
@@ -52,11 +46,11 @@ namespace Client
             ICompanyDB proxy = factory.CreateChannel();
             List<Osoba> privremena = proxy.Read();
 
-            foreach(Osoba o in privremena)
+            foreach (Osoba o in privremena)
             {
-                if(o.KorIme.Equals(zaposlen.KorIme))
+                if (o.KorIme.Equals(zaposlen.KorIme))
                 {
-                    if(o.Lozinka.Equals(zaposlen.Lozinka))
+                    if (o.Lozinka.Equals(zaposlen.Lozinka))
                     {
                         this.z = o;
                         break;
@@ -69,11 +63,11 @@ namespace Client
             proxy.ReplaceAction(z, prijavljeni); 
 
             this.vremeDolaskaNaPosao = DateTime.Now;
-           dolazakNaPosao();                                
+            DolazakNaPosao();                                
 
-            promenaLozinke();
+            PromenaLozinke();
 
-            pregledZaposlenih();
+            PregledZaposlenih();
 
         
         }
@@ -89,7 +83,7 @@ namespace Client
             this.Close();
         }
 
-        private void pregledZaposlenih()
+        private void PregledZaposlenih()
         {
             sviZaposleniCB.SelectedItem = null;
             sviZaposleniCB.Items.Clear();
@@ -127,7 +121,7 @@ namespace Client
             novi.ShowDialog();
         }
 
-        private void sviZaposleniCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SviZaposleniCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (!(sviZaposleniCB.SelectedItem == null))
             {
@@ -161,7 +155,7 @@ namespace Client
             }
         }
 
-        private void dolazakNaPosao()
+        private void DolazakNaPosao()
         {
             string[] vreme = prijavljeni.RadnoVremeStart.Split(':');
             int sati = Int32.Parse(vreme[0]);
@@ -181,31 +175,31 @@ namespace Client
             }
         }
 
-        private void promenaLozinke()
+        private void PromenaLozinke()
         {
             DateTime trenutnovreme = DateTime.Now;
             DateTime lozinka = prijavljeni.VremeLozinke;
 
             int razlika = Math.Abs(trenutnovreme.Month - lozinka.Month);
 
-            if(razlika == 6)
+            if (razlika == 6)
             {
                 IzmenaPodataka izmena = new IzmenaPodataka(prijavljeni, factory, 2);
                 izmena.ShowDialog();
             }
         }
-        private void partnerstvo_Click(object sender, RoutedEventArgs e) { }
-		
-		/// /////////////////////////////////////////////////////////////////
-		
+        private void Partnerstvo_Click(object sender, RoutedEventArgs e) { }
+        
+        
+    
 
-		private void Ucitaj_OutsorsingKompanije(object sender, RoutedEventArgs e)
-		{
-			PrikazOutsorsingCompany window = new PrikazOutsorsingCompany();
-			window.Show();
+        private void Ucitaj_OutsorsingKompanije(object sender, RoutedEventArgs e)
+        {
+            PrikazOutsorsingCompany window = new PrikazOutsorsingCompany();
+            window.Show();
 
-			
-		}
+            
+        }
 
         private void Ucitavanje_projekata_Iz_Baze(object sender, RoutedEventArgs e)
         {
@@ -213,14 +207,14 @@ namespace Client
             ICompanyDB proxy = factory.CreateChannel();
 
             List<Projekat> lista_Projekata = new List<Projekat>();
-            lista_Projekata =  proxy.ReadProjects();
+            lista_Projekata = proxy.ReadProjects();
             PogledProjekata pogProj = new PogledProjekata();
 
-            foreach(var p in lista_Projekata)
+            foreach (var p in lista_Projekata)
             {
-				pogProj.listBoxProj.Items.Add(p);
+                pogProj.listBoxProj.Items.Add(p);
             }
-            ////////  sad ovde treba da se ucitaju i  outSorsing Kompanije
+          
             List<KompanijaOUT> lista_OutsorsingKompanija = proxy.ReadCompanyOutsorsing();
             foreach (var outS in lista_OutsorsingKompanija)
                 {

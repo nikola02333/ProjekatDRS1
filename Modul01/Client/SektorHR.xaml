@@ -10,7 +10,7 @@
         <Button Content="Odjava" HorizontalAlignment="Left" Margin="668,37,0,0" VerticalAlignment="Top" Width="82" Height="42" FontSize="20" Click="Button_Click"/>
         <TextBox x:Name="prikazZaposlenihTB" HorizontalAlignment="Left" Height="410" Margin="69,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="521"/>
         <Button Content="Dodavanje" HorizontalAlignment="Left" Margin="646,172,0,0" VerticalAlignment="Top" Width="104" Height="42" Click="Button_Click_2"/>
-        <ComboBox x:Name="sviZaposleniCB" HorizontalAlignment="Left" Margin="279,49,0,0" VerticalAlignment="Top" Width="131" Height="37" SelectionChanged="sviZaposleniCB_SelectionChanged"/>
+        <ComboBox x:Name="SviZaposleniCB" HorizontalAlignment="Left" Margin="279,49,0,0" VerticalAlignment="Top" Width="131" Height="37" SelectionChanged="SviZaposleniCB_SelectionChanged"/>
         <Button Content="Izmena sopstvenih podataka" HorizontalAlignment="Left" Margin="606,253,0,0" VerticalAlignment="Top" Width="176" Height="42" Click="Button_Click_3"/>
         <Button Content="Pregled trenutno prijavljenih" HorizontalAlignment="Left" Margin="69,110,0,0" VerticalAlignment="Top" Width="181" Height="36" Click="Button_Click_4"/>
         <Label x:Name="label" Content="Pregled zaposlenih i izmena:" HorizontalAlignment="Left" Margin="79,49,0,0" VerticalAlignment="Top" Height="37" Width="171"/>

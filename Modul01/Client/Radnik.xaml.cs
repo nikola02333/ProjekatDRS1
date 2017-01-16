@@ -25,16 +25,16 @@ namespace Client
     /// </summary>
     public partial class Radnik : Window
     {
-        ChannelFactory<ICompanyDB> factory = new ChannelFactory<ICompanyDB>(
+        private ChannelFactory<ICompanyDB> factory = new ChannelFactory<ICompanyDB>(
             new NetTcpBinding(),
             new EndpointAddress("net.tcp://localhost:4000/ICompanyDB"));
 
        
-        Osoba z;
-        Osoba trenutni;
-        DateTime vremeDolaskaNaPosao;
+        private Osoba z;
+        private Osoba trenutni;
+        private DateTime vremeDolaskaNaPosao;
 
-        public Radnik (Osoba zaposlen)
+        public Radnik(Osoba zaposlen)
         {
             InitializeComponent();
 
@@ -58,14 +58,14 @@ namespace Client
             proxy.ReplaceAction(z, trenutni);
 
             this.vremeDolaskaNaPosao = DateTime.Now;
-            dolazakNaPosao();                              
+            DolazakNaPosao();                              
 
-            promenaLozinke();
+            PromenaLozinke();
 
          
         }
 
-        private void Button_Click (object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             ICompanyDB proxy = factory.CreateChannel();
 
@@ -75,7 +75,7 @@ namespace Client
             this.Close();
         }
 
-        private void Button_Click_1 (object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             IzmenaPodataka izmena = new IzmenaPodataka(trenutni, factory, 1);
             izmena.Owner = this;
@@ -99,7 +99,7 @@ namespace Client
             }
         }
 
-        private void dolazakNaPosao()
+        private void DolazakNaPosao()
         {
             string[] vreme = trenutni.RadnoVremeStart.Split(':');
             int sati = Int32.Parse(vreme[0]);
@@ -120,7 +120,7 @@ namespace Client
             }
         }
 
-        private void promenaLozinke()
+        private void PromenaLozinke()
         {
             DateTime trenutnovreme = DateTime.Now;
             DateTime lozinka = trenutni.VremeLozinke;
@@ -134,7 +134,7 @@ namespace Client
             }
         }
 
-        private void primer_SelectionChanged (object sender, SelectionChangedEventArgs e)
+        private void Primer_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ICompanyDB proxy = factory.CreateChannel();
 

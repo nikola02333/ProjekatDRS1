@@ -24,15 +24,15 @@ namespace Client
     /// </summary>
     public partial class SektorHR : Window
     {
-        ChannelFactory<ICompanyDB> factory = new ChannelFactory<ICompanyDB>(
+        private ChannelFactory<ICompanyDB> factory = new ChannelFactory<ICompanyDB>(
             new NetTcpBinding(),
             new EndpointAddress("net.tcp://localhost:4000/ICompanyDB"));
 
-        Osoba z;
-        Osoba trenutni;
-        DateTime vremeDolaskaNaPosao;
+        private Osoba z;
+        private Osoba trenutni;
+        private DateTime vremeDolaskaNaPosao;
 
-        public SektorHR (Osoba zaposlen)
+        public SektorHR(Osoba zaposlen)
         {
             InitializeComponent();
 
@@ -56,14 +56,14 @@ namespace Client
             proxy.ReplaceAction(z, trenutni);
 
             this.vremeDolaskaNaPosao = DateTime.Now;
-                     dolazakNaPosao();                       
+            DolazakNaPosao();                       
 
-            promenaLozinke();
+            PromenaLozinke();
 
-            pregledZaposlenih();
+            PregledZaposlenih();
         }
 
-        private void Button_Click (object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             ICompanyDB proxy = factory.CreateChannel();
 
@@ -73,10 +73,10 @@ namespace Client
             this.Close();
         }
 
-        private void pregledZaposlenih()
+        private void PregledZaposlenih()
         {
-            sviZaposleniCB.SelectedItem = null;
-            sviZaposleniCB.Items.Clear();
+            SviZaposleniCB.SelectedItem = null;
+            SviZaposleniCB.Items.Clear();
 
             ICompanyDB proxy = factory.CreateChannel();
 
@@ -92,29 +92,29 @@ namespace Client
                     }
                     else
                     {
-                        sviZaposleniCB.Items.Add(zaposlen);
+                        SviZaposleniCB.Items.Add(zaposlen);
                         continue;
                     }
                 }
                 else
                 {
-                    sviZaposleniCB.Items.Add(zaposlen);
+                    SviZaposleniCB.Items.Add(zaposlen);
                 }
             }
         }
 
-        private void Button_Click_2 (object sender, RoutedEventArgs e)
+        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             NoviZaposleni novi = new NoviZaposleni(factory);
             novi.Owner = this;
             novi.ShowDialog();
         }
 
-        private void sviZaposleniCB_SelectionChanged (object sender, SelectionChangedEventArgs e)
+        private void SviZaposleniCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (!(sviZaposleniCB.SelectedItem == null))
+            if (!(SviZaposleniCB.SelectedItem == null))
             {
-                IzmenaPodataka izmena = new IzmenaPodataka((Osoba)sviZaposleniCB.SelectedItem, factory, 0);
+                IzmenaPodataka izmena = new IzmenaPodataka((Osoba)SviZaposleniCB.SelectedItem, factory, 0);
                 izmena.Owner = this;
                 izmena.ShowDialog();
             }
@@ -144,7 +144,7 @@ namespace Client
             }
         }
 
-        private void dolazakNaPosao ()
+        private void DolazakNaPosao()
         {
             string[] vreme = trenutni.RadnoVremeStart.Split(':');
             int sati = Int32.Parse(vreme[0]);
@@ -164,7 +164,7 @@ namespace Client
             }
         }
 
-        private void promenaLozinke()
+        private void PromenaLozinke()
         {
             DateTime trenutnovreme = DateTime.Now;
             DateTime lozinka = trenutni.VremeLozinke;

@@ -12,17 +12,56 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using log4net;
 
 namespace Server
 {
     public class Program
     {
-        public static log4net.ILog Logger = Logovanje.GetLogger();
-        public static Dictionary<string, Osoba> zaposleni = new Dictionary<string, Osoba>();
-        public static int ID_Proj = 1;
+        private static log4net.ILog logger = Logovanje.GetLogger();
+        private static Dictionary<string, Osoba> zaposleni = new Dictionary<string, Osoba>();
+        private static int iD_Proj = 1;
         private static ServiceHost svc = null;
         private static ServiceHost svc2 = null;
-        private static ServiceHost svc3 = null;
+
+        public static ILog Logger
+        {
+            get
+            {
+                return logger;
+            }
+
+            set
+            {
+                logger = value;
+            }
+        }
+
+        public static int ID_Proj
+        {
+            get
+            {
+                return iD_Proj;
+            }
+
+            set
+            {
+                iD_Proj = value;
+            }
+        }
+
+        public static Dictionary<string, Osoba> Zaposleni
+        {
+            get
+            {
+                return zaposleni;
+            }
+
+            set
+            {
+                zaposleni = value;
+            }
+        }
 
         public static void Main(string[] args)
         {
@@ -37,7 +76,7 @@ namespace Server
 
             CompanyDB.Instance.PopunjavanjeTabele();
          
-			CompanyDB.Instance.PopunjavanjeBaze();
+            CompanyDB.Instance.PopunjavanjeBaze();
 
             Console.WriteLine("\nPocni\n");
 

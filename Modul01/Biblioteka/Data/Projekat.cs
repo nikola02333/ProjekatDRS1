@@ -19,12 +19,14 @@ namespace Biblioteka.Data
         private int tezina;
         private string zadaci;
         private int id;
+        private bool zavrsen;
+
 
         private KompanijaOUT kompOut;
 
-        public Projekat () { }
+        public Projekat() { }
 
-        public Projekat (string ime, string opis, string kriterijum, DateTime pocetak, DateTime kraj, string korPrice, int tezina, string zadaci,int id)
+        public Projekat(string ime, string opis, string kriterijum, DateTime pocetak, DateTime kraj, string korPrice, int tezina, string zadaci, int id, bool za)
         {
             this.Ime = ime;
             this.Opis = opis;
@@ -35,8 +37,9 @@ namespace Biblioteka.Data
             this.Tezina = tezina;
             this.Zadaci = zadaci;
             this.id = id;
-            
+            Zavrsen = za;
         }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id
@@ -168,11 +171,22 @@ namespace Biblioteka.Data
             }
         }
 
-        public override string ToString()
+        public bool Zavrsen
         {
-            return Id+" "+Ime + " " + Opis + " " + Kriterijum;
+            get
+            {
+                return zavrsen;
+            }
+
+            set
+            {
+                zavrsen = value;
+            }
         }
 
-
+        public override string ToString()
+        {
+            return Id + " " + Ime + " " + Opis + " " + Kriterijum;
+        }
     }
 }

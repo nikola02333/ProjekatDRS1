@@ -24,7 +24,7 @@ namespace Client
     /// </summary>
     public partial class MainWindow : Window
     {
-        ChannelFactory<IFunkcije> factory = new ChannelFactory<IFunkcije>(
+        private ChannelFactory<IFunkcije> factory = new ChannelFactory<IFunkcije>(
             new NetTcpBinding(),
             new EndpointAddress("net.tcp://localhost:4000/IFunkcije"));
 
@@ -49,10 +49,10 @@ namespace Client
             Osoba zaposlen = new Osoba();
             zaposlen.KorIme = username;
             zaposlen.Lozinka = pass;
-          
 
 
-            switch (proxy.SlanjeLoga(username, pass))  // 0- direktor , 1-hr , 2- radnik , 3-PO , 4 sm
+            // 0- direktor , 1-hr , 2- radnik , 3-PO , 4 sm
+            switch (proxy.SlanjeLoga(username, pass))  
             {
                 case 0:
                          Direktor zaposleni = new Direktor(zaposlen);

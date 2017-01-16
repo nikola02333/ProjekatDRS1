@@ -12,16 +12,14 @@ namespace Server
     public class Funkcije : IFunkcije
     {
         private static List<string> kompanije = new List<string>();
-        List<string> pomocnaLista = new List<string>();
+        private List<string> pomocnaLista = new List<string>();
 
         private static Dictionary<string, Projekat> projekat = new Dictionary<string, Projekat>();
-        Dictionary<string, Projekat> pomocna = new Dictionary<string, Projekat>();
+        private Dictionary<string, Projekat> pomocna = new Dictionary<string, Projekat>();
 
         public int SlanjeLoga(string username, string pass)
         {
             Console.WriteLine(username + " " + pass);
-
-            int postoji = -1;
 
             Osoba o = new Osoba();
             o.KorIme = username;
@@ -29,14 +27,13 @@ namespace Server
             string poruka;
             List<Osoba> baza = CompanyDB.Instance.Read();
 
-            foreach(var zaposlen in baza)
+            foreach (var zaposlen in baza)
             {
-                if(o.KorIme.Equals(zaposlen.KorIme))
+                if (o.KorIme.Equals(zaposlen.KorIme))
                 {
-                    if(o.Lozinka.Equals(zaposlen.Lozinka))
+                    if (o.Lozinka.Equals(zaposlen.Lozinka))
                     {
-                         
-                        switch(zaposlen.Uloga)
+                        switch (zaposlen.Uloga)
                         {
                             case "direktor":
                                  poruka = string.Format("Funkcija.SlanjeLoga - Korisnik {0} se uspesno ulogovao", zaposlen.KorIme);
@@ -59,15 +56,12 @@ namespace Server
                                 return 3;
                             case "skrmaster":
                                 return 4;
-
                         }
-                      
                     }
                 }
             }
 
-           
-                Program.zaposleni.Add(pass, o);
+                Program.Zaposleni.Add(pass, o);
 
                 return 0;  
             }

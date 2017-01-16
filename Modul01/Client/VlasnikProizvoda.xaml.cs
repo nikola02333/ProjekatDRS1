@@ -33,7 +33,7 @@ namespace Client
         public VlasnikProizvoda(Osoba zaposlen)
         {
             InitializeComponent();
-            
+
             ICompanyDB proxy = factory.CreateChannel();
             List<Osoba> privremena = proxy.Read();
 
@@ -54,11 +54,11 @@ namespace Client
             proxy.ReplaceAction(z, trenutni);
 
             this.vremeDolaskaNaPosao = DateTime.Now;
-            //         dolazakNaPosao();                               
+                  //   dolazakNaPosao();                               
 
             promenaLozinke();
 
-            
+
         }
         private void promenaLozinke()
         {
@@ -80,22 +80,22 @@ namespace Client
         private void KreirajProjekat(object sender, RoutedEventArgs e)
         {
 
-            
-                Projekat proj = new Projekat(textBoxIme.Text, textBoxOpis.Text,
-                textBoxKriterijunm.Text, dataPickerPoc.SelectedDate.Value, dataPickerKraj.SelectedDate.Value
-                , textBoxKorisnicaPrica.Text, int.Parse(textBoxTezina.Text), textBoxZadaci.Text, Program.ID_Proj);
-            
-           
+
+            Projekat proj = new Projekat(textBoxIme.Text, textBoxOpis.Text,
+            textBoxKriterijunm.Text, dataPickerPoc.SelectedDate.Value, dataPickerKraj.SelectedDate.Value
+            , textBoxKorisnicaPrica.Text, int.Parse(textBoxTezina.Text), textBoxZadaci.Text, Program.ID_Proj, false);
+
+
 
             Program.ID_Proj++;
-            bool x= ubaciUbazuProjekat(proj);
+            bool x = ubaciUbazuProjekat(proj);
 
         }
         public bool ubaciUbazuProjekat(Projekat proj)
         {
             ICompanyDB proxy = factory.CreateChannel();
 
-            if( proxy.AddActionProject(proj))
+            if (proxy.AddActionProject(proj))
             {
                 MessageBox.Show("Projekat uspesno sacuvan u bazi :D ");
             }
@@ -103,13 +103,33 @@ namespace Client
             return true;
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void Odjava_zatvori(object sender, RoutedEventArgs e)
         {
             ICompanyDB proxy = factory.CreateChannel();
 
             trenutni.Prijavljen = false;
             proxy.ReplaceAction(z, trenutni);
             this.Close();
+        }
+
+        private void  Prikaz_Aktivnih(object sender, RoutedEventArgs e)
+        {
+            ProdOwnerCloseProject projClose = new ProdOwnerCloseProject();
+            projClose.Show();
+
+
+
+            ICompanyDB proxy = factory.CreateChannel();
+
+            List<Projekat> lista_Projekata = new List<Projekat>();
+            lista_Projekata = proxy.ReadProjects();
+            PogledProjekata pogProj = new PogledProjekata();
+
+            foreach (var p in lista_Projekata)
+            {
+                pogProj.listBoxProj.Items.Add(p);
+            }
+
         }
     }
 }

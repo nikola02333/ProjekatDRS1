@@ -11,7 +11,7 @@
         <TextBox x:Name="prikazZaposlenihTB" HorizontalAlignment="Left" Height="410" Margin="69,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="521"/>
         <Button Content="Izmena podataka" HorizontalAlignment="Left" Margin="462,27,0,0" VerticalAlignment="Top" Width="128" Height="42" Click="Button_Click_1"/>
         <Button Content="Pregled trenutno prijavljenih" HorizontalAlignment="Left" Margin="69,86,0,0" VerticalAlignment="Top" Width="172" Height="44" Click="Button_Click_2"/>
-        <ComboBox x:Name="primer" HorizontalAlignment="Left" Margin="650,343,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="primer_SelectionChanged"/>
+        <ComboBox x:Name="primer" HorizontalAlignment="Left" Margin="650,343,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Primer_SelectionChanged"/>
         <Button x:Name="pregledbutton" Content="Pregled Kompanija" HorizontalAlignment="Left" Margin="650,198,0,0" VerticalAlignment="Top" Width="120" Height="66"/>
         <Button x:Name="buttonVodjeTima" Content="Odabir Kor. prica" HorizontalAlignment="Left" Margin="650,402,0,0" VerticalAlignment="Top" Width="120" Height="36" Visibility="Hidden"/>
 

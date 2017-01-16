@@ -79,6 +79,9 @@
     <Compile Include="PrikazOutsorsingCompany.xaml.cs">
       <DependentUpon>PrikazOutsorsingCompany.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProdOwnerCloseProject.xaml.cs">
+      <DependentUpon>ProdOwnerCloseProject.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Radnik.xaml.cs">
       <DependentUpon>Radnik.xaml</DependentUpon>
     </Compile>
@@ -126,6 +129,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrikazOutsorsingCompany.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProdOwnerCloseProject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

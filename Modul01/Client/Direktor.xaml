@@ -6,12 +6,12 @@
         <Button Content="Odjava" HorizontalAlignment="Left" Margin="668,27,0,0" VerticalAlignment="Top" Width="82" Height="42" FontSize="20" Click="Button_Click"/>
         <TextBox x:Name="prikazZaposlenihTB" HorizontalAlignment="Left" Height="290" Margin="69,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="500"/>
         <Button Content="Dodavanje" HorizontalAlignment="Left" Margin="668,172,0,0" VerticalAlignment="Top" Width="104" Height="42" Click="DodavanjeNovogZaposlenog"/>
-        <ComboBox x:Name="sviZaposleniCB" HorizontalAlignment="Left" Margin="283,28,0,0" VerticalAlignment="Top" Width="128" Height="25" SelectionChanged="sviZaposleniCB_SelectionChanged"/>
+        <ComboBox x:Name="sviZaposleniCB" HorizontalAlignment="Left" Margin="283,28,0,0" VerticalAlignment="Top" Width="128" Height="25" SelectionChanged="SviZaposleniCB_SelectionChanged"/>
         <Button Content="Izmena sopstvenih podataka" HorizontalAlignment="Left" Margin="595,238,0,0" VerticalAlignment="Top" Width="177" Height="42" Click="IzmenaSpostvenihPodataka"/>
         <Button Content="Pregled trenutnih prijavljenih" HorizontalAlignment="Left" Margin="69,238,0,0" VerticalAlignment="Top" Width="188" Height="40" Click="Button_Click_4"/>
         <Label x:Name="label" Content="Pregled zaposlenih i izmena:" HorizontalAlignment="Left" Margin="69,27,0,0" VerticalAlignment="Top" Width="163"/>
         <Label x:Name="label2" HorizontalAlignment="Left" Margin="595,372,0,0" VerticalAlignment="Top" Height="29" Width="177" Visibility="Hidden"/>
-        <Button x:Name="partnerstvo" Content="Zahtev za partnerstvo" HorizontalAlignment="Left" Margin="595,540,0,0" VerticalAlignment="Top" Width="177" Height="42" Click="partnerstvo_Click" IsEnabled="False"/>
+        <Button x:Name="partnerstvo" Content="Zahtev za partnerstvo" HorizontalAlignment="Left" Margin="595,540,0,0" VerticalAlignment="Top" Width="177" Height="42" Click="Partnerstvo_Click" IsEnabled="False"/>
         <Button Content="Pogled Outsorsing Kompanija" HorizontalAlignment="Left" Margin="69,91,0,0" VerticalAlignment="Top" Width="177" Height="34" Click="Ucitaj_OutsorsingKompanije"/>
         <Button x:Name="button" Content="Pogledaj Projekte u Bazi" HorizontalAlignment="Left" Margin="69,172,0,0" VerticalAlignment="Top" Width="177" Height="39" Click="Ucitavanje_projekata_Iz_Baze"/>
 

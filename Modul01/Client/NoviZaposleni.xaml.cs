@@ -22,7 +22,7 @@ namespace Client
     /// </summary>
     public partial class NoviZaposleni : Window
     {
-        ChannelFactory<ICompanyDB> factory;
+        private ChannelFactory<ICompanyDB> factory;
 
         public NoviZaposleni(ChannelFactory<ICompanyDB> fact)
         {

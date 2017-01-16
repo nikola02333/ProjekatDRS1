@@ -22,10 +22,10 @@ namespace Client
     /// </summary>
     public partial class IzmenaPodataka : Window
     {
-        ChannelFactory<ICompanyDB> factory;
-        Osoba zaposlen;
-        Osoba izmenjeni;
-        int mojiPodaci;
+        private ChannelFactory<ICompanyDB> factory;
+        private Osoba zaposlen;
+        private Osoba izmenjeni;
+        private int mojiPodaci;
 
         public IzmenaPodataka(Osoba zap, ChannelFactory<ICompanyDB> fact, int broj)
         {
@@ -58,7 +58,7 @@ namespace Client
                 krvTB.IsEnabled = true;
                 emailTB.IsEnabled = true;
             }
-            else if(mojiPodaci == 2)
+            else if (mojiPodaci == 2)
             {
                 poruka.Visibility = Visibility.Visible;
                 poruka.Content = "Isteklo je 6 meseci - promenite lozinku!";
@@ -106,7 +106,7 @@ namespace Client
             izmenjeni.Prijavljen = zaposlen.Prijavljen;
             izmenjeni.Email = zaposlen.Email.Trim();
 
-            if(!zaposlen.Lozinka.Equals(izmenjeni.Lozinka))
+            if (!zaposlen.Lozinka.Equals(izmenjeni.Lozinka))
             {
                 izmenjeni.VremeLozinke = DateTime.Now;
             }

@@ -8,49 +8,44 @@ using System.Threading.Tasks;
 
 namespace Biblioteka.Data
 {
-	public class KompanijaOUT
-	{
-		public KompanijaOUT() { }
-		public KompanijaOUT(string i, int id,string por, string ip)
-		{
-			ime = i;
-			Id = id;
-			port = por;
-			ipaddr = ip;
-		}
+    public class KompanijaOUT
+    {
+        public KompanijaOUT() { }
+        public KompanijaOUT(string i, int id, string por, string ip)
+        {
+            ime = i;
+            Id = id;
+            port = por;
+            ipaddr = ip;
+        }
 
-		string ime;
-		int id;
-		string port;
-		string ipaddr;
-		//Projekat project;
+        private string ime;
+        private int id;
+        private string port;
+        private string ipaddr;
 
-		
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public string Ime
+        {
+            get { return ime; }
+            set { ime = value; }
+        }
 
-		[Key]
-		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public int Id
-		{
-			get { return id; }
-			set { id = value; }
-		}
-		public string Ime
-		{
-			get { return ime; }
-			set { ime = value; }
-		}
+        public string Ipaddr
+        {
+            get { return ipaddr; }
+            set { ipaddr = value; }
+        }
+        public override string ToString()
+        {
+            return Ime + Ipaddr + Id;
+        }
 
-		public string Ipaddr
-		{
-			get { return ipaddr; }
-			set { ipaddr = value; }
-		}
-		public override string ToString()
-		{
-			return Ime + Ipaddr + Id;
-
-		}
-
-		
-	}
+    }
 }

@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DataTest\OsobaTest.cs" />
+    <Compile Include="DataTest\ProjectTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

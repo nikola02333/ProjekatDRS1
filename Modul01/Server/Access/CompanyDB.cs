@@ -12,32 +12,35 @@ namespace Server.Access
     {
         private static ICompanyDB myDB;
 
-        Osoba o1 = new Osoba("Dunja", "dunja", "radnik", "9:00", "14:00", false, DateTime.Now, "elguaje358@gmail.com");
-        Osoba o2 = new Osoba("Nikola", "nikola", "radnik", "8:00", "14:00", false, DateTime.Parse("07/10/2010"), "svetabombas@live.com");
-        Osoba o3 = new Osoba("Tijana", "tiki", "radnik", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
-        Osoba o4 = new Osoba("Milana", "milana", "radnik", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
-        Osoba o5 = new Osoba("Aca", "aca", "radnik", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
-        Osoba o6 = new Osoba("Nina", "nina", "vlasnikproj", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
-        Osoba o7 = new Osoba("Nesa", "nesa", "radnik", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
-        Osoba o8 = new Osoba("Miki", "miki", "radnik", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
-        Osoba o9 = new Osoba("Jovana", "jole", "direktor", "9:00", "14:00", false, DateTime.Now, "neko1118@hotmail.com");
-        Osoba o10 = new Osoba("Suzana", "suza", "direktor", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
-        Osoba o11 = new Osoba("Jova", "jova", "direktor", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
-        Osoba o12 = new Osoba("Sava", "sava", "hr", "9:00", "14:00", false, DateTime.Now, "jovana.medakovic94@gmail.com");
+        private Osoba o1 = new Osoba("Dunja", "dunja", "radnik", "9:00", "14:00", false, DateTime.Now, "elguaje358@gmail.com");
+        private Osoba o2 = new Osoba("Nikola", "nikola", "radnik", "8:00", "14:00", false, DateTime.Parse("07/10/2010"), "svetabombas@live.com");
+        private Osoba o3 = new Osoba("Tijana", "tiki", "radnik", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
+        private Osoba o4 = new Osoba("Milana", "milana", "radnik", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
+        private Osoba o5 = new Osoba("Aca", "aca", "radnik", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
+        private Osoba o6 = new Osoba("Nina", "nina", "vlasnikproj", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
+        private Osoba o7 = new Osoba("Nesa", "nesa", "radnik", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
+        private Osoba o8 = new Osoba("Miki", "miki", "radnik", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
+        private Osoba o9 = new Osoba("Jovana", "jole", "direktor", "9:00", "14:00", false, DateTime.Now, "neko1118@hotmail.com");
+        private Osoba o10 = new Osoba("Suzana", "suza", "direktor", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
+        private Osoba o11 = new Osoba("Jova", "jova", "direktor", "9:00", "14:00", false, DateTime.Now, "jovanamedakovic@hotmail.com");
+        private Osoba o12 = new Osoba("Sava", "sava", "hr", "9:00", "14:00", false, DateTime.Now, "jovana.medakovic94@gmail.com");
 
         public static ICompanyDB Instance
         {
             get
             {
                 if (myDB == null)
+                {
                     myDB = new CompanyDB();
-
+                }
                 return myDB;
             }
             set
             {
                 if (myDB == null)
+                {
                     myDB = value;
+                }
             }
         }
 
@@ -49,15 +52,15 @@ namespace Server.Access
                 int i = access.SaveChanges();
 
                 if (i > 0)
+                {
                     return true;
-                return false;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
-
-       
-
-        
-
 
         public bool ReplaceAction(Osoba zaposlen, Osoba izmenjen)
         {
@@ -84,8 +87,13 @@ namespace Server.Access
 
                 int i = access.SaveChanges();
                 if (i > 0)
+                {
                     return true;
-                return false;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
@@ -143,8 +151,13 @@ namespace Server.Access
                 int i = access.SaveChanges();
 
                 if (i > 0)
+                {
                     return true;
-                return false;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
@@ -197,8 +210,13 @@ namespace Server.Access
                 int i = access.SaveChanges();
 
                 if (i > 0)
+                {
                     return true;
-                return false;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
         public List<Projekat> ReadProjects()
@@ -230,15 +248,21 @@ namespace Server.Access
                     {
                         proj.Ime = projekat.Ime;
                         proj.KompOut = projekat.KompOut;
-
+                        proj.Zavrsen = projekat.Zavrsen;
                         break;
                     }
                 }
 
                 int i = access.SaveChanges();
+
                 if (i > 0)
+                {
                     return true;
-                return false;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
     }
