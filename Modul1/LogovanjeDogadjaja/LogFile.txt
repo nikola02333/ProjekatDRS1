@@ -1,0 +1,2 @@
+2017-01-15 23:42:33,651 INFO - Funkcija.SlanjeLoga - Korisnik Jovana se uspesno ulogovao
+2017-01-15 23:47:24,854 INFO - Funkcija.SlanjeLoga - Korisnik Nikola se uspesno ulogovao
